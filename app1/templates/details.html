@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<section id="details-section">
+	<div class="container details-container">
+		<div class="carousel" data-flickity='{"wrapAround": true }'>
+			{% for p in photos %}
+			<div class="carousel-cell details-card">
+				<img src="/media/{{p.image}}" height="500px" />
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% endblock %}

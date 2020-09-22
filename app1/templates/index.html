@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+<section id="hero">
+	<header class="hero">
+		<div class="jumbotron">
+			<h1 class="display-4">
+				<b>Welcome to
+				<span class="emphasize">Vaishali </span> Enterprises</b>
+			</h1>
+			<br />
+			<h1 class="display-5">
+				Est. in <span class="emphasize">'97 </span>
+			</h1>
+			<h4 class="hero-subheading">
+				We provide <span class="emphasize">Reliable </span> <span class="emphasize">Construction </span> and <span class="emphasize">Renovation </span> solutions.
+			</h1>
+			<hr class="my-4" />
+			<!-- <p>Lets get conn</p> -->
+			<a
+				class="btn btn-primary btn-lg main-btn"
+				href="{% url 'work' %}"
+				role="button"
+				>Check out our work</a
+			>
+		</div>
+	</header>
+</section>
+
+{% endblock %}

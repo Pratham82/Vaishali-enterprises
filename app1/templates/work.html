@@ -1,0 +1,92 @@
+{% extends 'base.html' %} {% block content %}
+
+<section id="sites" id="sites">
+	<h1 class="heading-main">
+		<span class="emphasized-heading"> Our Work </span>
+	</h1>
+
+	<h2 class="subheading" id="sites-start">Ongoing Sites</h2>
+	<div class="container sites-container">
+		<div class="carousel" data-flickity='{ "wrapAround": true }'>
+			{% for site in ongoing %}
+			<div class="carousel-cell site-card">
+				<img
+					src="/media/{{site.image}}"
+					width="500px"
+					height="50px"
+					class="siteImage"
+				/>
+
+				<p>
+					<b>Status:</b> {{site.status}}
+					<br />
+					<b>Client:</b> {{site.clientName}}
+					<br />
+					<b>Location:</b> {{site.location}}
+					<br />
+				</p>
+				<div>
+					<button
+						type="button"
+						class="btn btn-secondary main-btn"
+						data-toggle="tooltip"
+						data-placement="top"
+						title="{{site.description}}"
+					>
+						Details
+					</button>
+
+					<a
+						href="{% url 'details' site.id %}"
+						class="btn btn-primary btn-md main-btn"
+						>Check Progress</a
+					>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<h2 class="subheading">Completed Sites</h2>
+	<div class="container sites-container">
+		<div class="carousel" data-flickity='{"wrapAround": true }'>
+			{% for site in completed %}
+			<div class="carousel-cell site-card">
+				<img
+					src="/media/{{site.image}}"
+					width="500px"
+					height="50px"
+					class="siteImage"
+				/>
+
+				<p>
+					<b>Status:</b> {{site.status}}
+					<br />
+					<b>Client:</b> {{site.clientName}}
+					<br />
+					<b>Location:</b> {{site.location}}
+					<br />
+				</p>
+				<div>
+					<button
+						type="button"
+						class="btn btn-secondary main-btn"
+						data-toggle="tooltip"
+						data-placement="top"
+						title="{{site.description}}"
+					>
+						Details
+					</button>
+
+					<a
+						href="{% url 'details' site.id %}"
+						class="btn btn-primary btn-md main-btn"
+						>Check Progress</a
+					>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% endblock %}
